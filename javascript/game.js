@@ -18,7 +18,8 @@ crystalCollector.img = [
 
   // press start button to begin
   $("#start").on("click", function() {
-
+    //reset between games
+    $("#crystals").empty();
     // start random number
     crystalCollector.goalNumber = Math.floor(Math.random() * 90) + 30;
     console.log(crystalCollector.goalNumber);
@@ -30,7 +31,7 @@ crystalCollector.img = [
 
     // 4 crystals each represents hidden number
     for (let i = 0; i < 4; i++) {
-        crystalCollector.crystals[i] = Math.floor(Math.random() * 12) + 1;
+        crystalCollector.crystals[i] = Math.floor(Math.random() * 20) + 1;
         console.log(crystalCollector.crystals[i]);
         var crystalImage = $();
         var crystalButton = $('<button> <img src="' + crystalCollector.img[i] + '"/></button>').on('click', function() {
@@ -41,11 +42,12 @@ crystalCollector.img = [
           if ( crystalCollector.guessedSum === crystalCollector.goalNumber ) {
             alert("you win!!");
             crystalCollector.wins++;
-            $("#crystals").empty();
+            $("#crystals").html("<h1>YOU WIN!</h1>");
             crystalCollector.guessedSum = 0;
           } else if ( crystalCollector.guessedSum > crystalCollector.goalNumber ) {
             alert("you lose!!");
             crystalCollector.loses++;
+            $("#crystals").html("<h1>Try Again!</h1>");
             $("#crystals").empty();
             crystalCollector.guessedSum = 0;
           }

@@ -1,8 +1,24 @@
-.crystal-button {
+#start {
   box-sizing: border-box;
   margin-right: 16px;
-  font-size: 16px;
+  font-size: 32px;
   border: 5px;
+  background-color: seagreen;
   border-width: thick;
   border-color: blue;
+}
+
+div {
+	box-sizing: border-box;
+	margin: 5px 10px;
+	padding: 2px 5px;
+	font-size: 18px;
+}
+
+img {
+  	box-sizing: border-box;
+	width: 200px;
+	height: 200px;
+	padding-right: 10px;
+	margin-right: 0 30px;
 }
